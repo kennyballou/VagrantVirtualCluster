@@ -22,13 +22,12 @@ spark:
       - user: spark
 
 spark_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/spark/spark-{{spark.version}}/spark-{{spark.version_full}}.tgz
     - source_hash: "md5={{spark.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/spark-{{spark.version_full}}
 
 /opt/spark-{{spark.version_full}}:

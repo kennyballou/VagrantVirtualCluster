@@ -20,13 +20,12 @@ hadoop:
       - user: hadoop
 
 hadoop_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/hadoop/common/hadoop-{{hadoop.version}}/hadoop-{{hadoop.version}}.tar.gz
     - source_hash: "md5={{hadoop.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/hadoop-{{hadoop.version}}
 
 /opt/hadoop-{{hadoop.version}}:

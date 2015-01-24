@@ -22,13 +22,12 @@ kafka:
       - user: kafka
 
 kafka_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/kafka/{{kafka.version}}/kafka_{{kafka.scala_version}}-{{kafka.version}}.tgz
     - source_hash: "md5={{kafka.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/kafka_{{kafka.scala_version}}-{{kafka.version}}
 
 /opt/kafka_{{kafka.scala_version}}-{{kafka.version}}:

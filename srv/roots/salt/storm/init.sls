@@ -25,13 +25,12 @@ storm:
       - user: storm
 
 storm_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/incubator/storm/apache-storm-{{storm.version}}/apache-storm-{{storm.version}}.tar.gz
     - source_hash: "md5={{storm.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/apache-storm-{{storm.version}}
 
 /opt/apache-storm-{{storm.version}}:

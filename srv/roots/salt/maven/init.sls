@@ -1,13 +1,12 @@
 {% from "maven/map.jinja" import maven with context %}
 
 maven_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/maven/maven-3/{{maven.version}}/binaries/apache-maven-{{maven.version}}-bin.tar.gz
     - source_hash: "md5={{maven.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/apache-maven-{{maven.version}}
 
 /opt/apache-maven-{{maven.version}}:

@@ -1,13 +1,12 @@
 {% from "scala/map.jinja" import scala with context %}
 
 scala_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://downloads.typesafe.com/scala/{{scala.version}}/scala-{{scala.version}}.tgz
     - source_hash: "md5={{scala.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/scala-{{scala.version}}
 
 /opt/scala-{{scala.version}}:

@@ -18,13 +18,12 @@ zookeeper:
       - file: /etc/skel/.ssh
 
 zookeeper_install:
-  archive:
-    - extracted
+  archive.extracted:
     - name: /opt/
     - source: http://apache.claz.org/zookeeper/zookeeper-{{zookeeper.version}}/zookeeper-{{zookeeper.version}}.tar.gz
     - source_hash: "md5={{zookeeper.checksum}}"
     - archive_format: tar
-    - tar_options: z
+    - tar_options: xz
     - if_missing: /opt/zookeeper-{{zookeeper.version}}
 
 /opt/zookeeper-{{zookeeper.version}}:
