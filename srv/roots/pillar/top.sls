@@ -1,5 +1,6 @@
 base:
   '*':
+    - core
     - kafka
   'node0':
     - kafka.node0

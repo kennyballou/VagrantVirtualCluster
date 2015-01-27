@@ -27,7 +27,7 @@ storm:
 storm_install:
   archive.extracted:
     - name: /opt/
-    - source: http://apache.claz.org/storm/apache-storm-{{storm.version}}/apache-storm-{{storm.version}}.tar.gz
+    - source: {{pillar["base_url"]}}/storm/apache-storm-{{storm.version}}/apache-storm-{{storm.version}}.tar.gz
     - source_hash: "md5={{storm.checksum}}"
     - archive_format: tar
     - tar_options: xz

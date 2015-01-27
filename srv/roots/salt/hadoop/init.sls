@@ -22,7 +22,7 @@ hadoop:
 hadoop_install:
   archive.extracted:
     - name: /opt/
-    - source: http://apache.claz.org/hadoop/common/hadoop-{{hadoop.version}}/hadoop-{{hadoop.version}}.tar.gz
+    - source: {{pillar["base_url"]}}/hadoop/common/hadoop-{{hadoop.version}}/hadoop-{{hadoop.version}}.tar.gz
     - source_hash: "md5={{hadoop.checksum}}"
     - archive_format: tar
     - tar_options: xz

@@ -24,7 +24,7 @@ spark:
 spark_install:
   archive.extracted:
     - name: /opt/
-    - source: http://apache.claz.org/spark/spark-{{spark.version}}/spark-{{spark.version_full}}.tgz
+    - source: {{pillar["base_url"]}}/spark/spark-{{spark.version}}/spark-{{spark.version_full}}.tgz
     - source_hash: "md5={{spark.checksum}}"
     - archive_format: tar
     - tar_options: xz

@@ -3,7 +3,7 @@
 maven_install:
   archive.extracted:
     - name: /opt/
-    - source: http://apache.claz.org/maven/maven-3/{{maven.version}}/binaries/apache-maven-{{maven.version}}-bin.tar.gz
+    - source: {{pillar["base_url"]}}/maven/maven-3/{{maven.version}}/binaries/apache-maven-{{maven.version}}-bin.tar.gz
     - source_hash: "md5={{maven.checksum}}"
     - archive_format: tar
     - tar_options: xz

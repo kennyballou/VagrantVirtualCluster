@@ -20,7 +20,7 @@ zookeeper:
 zookeeper_install:
   archive.extracted:
     - name: /opt/
-    - source: http://apache.claz.org/zookeeper/zookeeper-{{zookeeper.version}}/zookeeper-{{zookeeper.version}}.tar.gz
+    - source: {{pillar["base_url"]}}/zookeeper/zookeeper-{{zookeeper.version}}/zookeeper-{{zookeeper.version}}.tar.gz
     - source_hash: "md5={{zookeeper.checksum}}"
     - archive_format: tar
     - tar_options: xz
