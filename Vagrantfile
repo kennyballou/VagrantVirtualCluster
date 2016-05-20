@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "CentOS65"
+  config.vm.box = "centos/7"
 
   config.vm.synced_folder "srv/roots/", "/srv/"
 
